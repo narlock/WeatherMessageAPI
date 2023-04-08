@@ -26,7 +26,7 @@ GET /weather/v1/sms
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": "111-222-3333"
+    "contact": "1112223333"
 }
 ```
 
@@ -57,7 +57,7 @@ GET /weather/v1/voice
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": "111-222-3333"
+    "contact": "1112223333"
 }
 ```
 
