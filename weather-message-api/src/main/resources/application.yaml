@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+weather:
+  client:
+    twilio:
+      url: https://api.twilio.com/2010-04-01
+      accountSid: ${twilio.accountSid}
+      authToken: ${twilio.authToken}
+    openweather:
+      url: https://api.openweathermap.org/data/2.5/weather
+      apiKey: ${openweather.apiKey}

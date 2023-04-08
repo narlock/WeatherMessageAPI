@@ -1,3 +1,4 @@
 
 weather-message-api/.mvn/wrapper/maven-wrapper.properties
 .DS_Store
+weather-message-api/src/main/resources/secret.properties
