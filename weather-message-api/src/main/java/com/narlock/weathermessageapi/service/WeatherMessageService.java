@@ -29,6 +29,33 @@ public class WeatherMessageService {
         String twilioStatus = "QUEUED"; // Debug message for less API calls
 
         // Return Response Description
+        log.info("Constructing WeatherMessageResponse");
+        return WeatherMessageResponse.builder()
+                .weatherInformation(
+                        WeatherInformation.builder()
+                                .build()
+                )
+                .status(twilioStatus.toUpperCase())
+                .message(messageBody)
+                .build();
+    }
+
+    public WeatherMessageResponse getSendWeatherMessageVoice(String city,
+                                                           String countryCode,
+                                                           String phone
+    ) {
+        // Get Weather Information from Open Weather API
+        // openWeatherWebClient.getWeatherData(city, countryCode);
+
+        // Construct Message To Send
+        String messageBody = "Hello World";
+
+        // Send sms to each phone number of Weather Message
+        // String twilioStatus = twilioClient.sendVoice(phone, messageBody);
+        String twilioStatus = "QUEUED"; // Debug message for less API calls
+
+        // Return Response Description
+        log.info("Constructing WeatherMessageResponse");
         return WeatherMessageResponse.builder()
                 .weatherInformation(
                         WeatherInformation.builder()

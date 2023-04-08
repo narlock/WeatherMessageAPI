@@ -37,4 +37,7 @@ public class WeatherMessageController {
         return ResponseEntity.ok(response);
     }
 
+    @PostMapping("/voice")
+    @R
+
 }
