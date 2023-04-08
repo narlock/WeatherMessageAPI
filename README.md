@@ -21,7 +21,7 @@ Sends a message to an array of phone numbers with the current weather informatio
 
 **Request**
 ```json
-GET /weather/v1/sms
+POST /weather/v1/sms
 
 {
     "weatherCity": "New York",
@@ -52,7 +52,7 @@ Makes a voice call to an array of phone numbers and delivers the current weather
 
 **Request**
 ```json
-GET /weather/v1/voice
+POST /weather/v1/voice
 
 {
     "weatherCity": "New York",
