@@ -29,8 +29,8 @@ public class WeatherMessageService {
         String messageBody = constructWeatherMessageFromInformation(weatherInformation);
 
         // Send sms to each phone number of Weather Message
-        // String twilioStatus = twilioClient.sendSms(phone, messageBody);
-        String twilioStatus = "QUEUED"; // Debug message for less API calls
+         String twilioStatus = twilioClient.sendSms(phone, messageBody);
+//        String twilioStatus = "QUEUED"; // Debug message for less API calls
 
         // Return Response Description
         log.info("Constructing WeatherMessageResponse");
