@@ -1,0 +1,26 @@
+# Spring Boot
+*.log
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.settings/
+.classpath
+.project
+.metadata
+
+# Gradle
+.gradle/
+/build/
+
+# Other
+*.class
+*.jar
+*.war
+.DS_Store
