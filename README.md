@@ -26,11 +26,7 @@ GET /weather/v1/sms
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": [
-        "111-222-3333",
-        "444-555-6666",
-        "777-888-9999"
-    ]
+    "contact": "111-222-3333"
 }
 ```
 
@@ -46,6 +42,7 @@ Content-Type: application/json
         "temp": 20,
         "description": "Cloudy",
     },
+    "status": "QUEUED",
     "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
 }
 ```
@@ -60,11 +57,7 @@ GET /weather/v1/voice
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": [
-        "111-222-3333",
-        "444-555-6666",
-        "777-888-9999"
-    ]
+    "contact": "111-222-3333"
 }
 ```
 
@@ -80,6 +73,7 @@ Content-Type: application/json
         "temp": 20,
         "description": "Cloudy",
     },
+    "status": "QUEUED",
     "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
 }
 ```
