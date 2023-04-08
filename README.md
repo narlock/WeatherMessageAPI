@@ -1,4 +1,4 @@
-# WeatherMessageAPI
+# Weather Message API
 
 **Anthony Narlock**
 
