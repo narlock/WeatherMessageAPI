@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "d17ee82c-2de3-4f5a-b723-1c3edeaa3abb",
+		"name": "Weather Message API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19318966"
+	},
+	"item": [
+		{
+			"name": "SMS Weather Information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"weatherCity\": \"New York\",\n    \"weatherCountryCode\": \"US\",\n    \"contact\": \"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/weather/api/v1/sms",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"api",
+						"v1",
+						"sms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Voice Weather Information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"weatherCity\": \"New York\",\n    \"weatherCountryCode\": \"US\",\n    \"contact\": \"1234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/weather/api/v1/voice",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						"api",
+						"v1",
+						"voice"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
