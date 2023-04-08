@@ -9,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ErrorResponse {
-    private String message;
-    private int status;
+public class WeatherInformation {
+    private String city;
+    private String countryCode;
+    private Integer temp;
+    private String description;
 }

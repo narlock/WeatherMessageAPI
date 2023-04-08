@@ -1,6 +1,6 @@
 package com.narlock.weathermessageapi.controller;
 
-import com.narlock.weathermessageapi.domain.ErrorResponse;
+import com.narlock.weathermessageapi.domain.error.ErrorResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @ControllerAdvice

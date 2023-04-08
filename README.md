@@ -24,10 +24,8 @@ Sends a message to an array of phone numbers with the current weather informatio
 GET /weather/v1/sms
 
 {
-    "weather": {
-        "city": "New York",
-        "countryCode": "US"
-    },
+    "weatherCity": "New York",
+    "weatherCountryCode": "US",
     "contact": [
         "111-222-3333",
         "444-555-6666",
@@ -48,7 +46,7 @@ Content-Type: application/json
         "temp": 20,
         "description": "Cloudy",
     },
-    "sms": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
+    "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
 }
 ```
 
@@ -60,10 +58,8 @@ Makes a voice call to an array of phone numbers and delivers the current weather
 GET /weather/v1/voice
 
 {
-    "weather": {
-        "city": "New York",
-        "countryCode": "US"
-    },
+    "weatherCity": "New York",
+    "weatherCountryCode": "US",
     "contact": [
         "111-222-3333",
         "444-555-6666",
@@ -84,7 +80,7 @@ Content-Type: application/json
         "temp": 20,
         "description": "Cloudy",
     },
-    "sms": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
+    "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
 }
 ```
 
