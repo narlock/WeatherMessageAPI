@@ -5,11 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @Data
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ResponseDescription {
-    private WeatherInformation weatherInformation;
-    private String message;
+public class WeatherMessageRequest {
+    private String weatherCity;
+    private String weatherCountryCode;
+    private String contact;
 }

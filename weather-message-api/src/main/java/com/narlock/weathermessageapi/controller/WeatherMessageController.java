@@ -1,27 +1,21 @@
 package com.narlock.weathermessageapi.controller;
 
-import com.narlock.weathermessageapi.domain.RequestDescription;
-import com.narlock.weathermessageapi.domain.ResponseDescription;
-import com.narlock.weathermessageapi.domain.WeatherInformation;
-//import com.narlock.weathermessageapi.service.WeatherMessageService;
+import com.narlock.weathermessageapi.domain.WeatherMessageRequest;
+import com.narlock.weathermessageapi.domain.WeatherMessageResponse;
+import com.narlock.weathermessageapi.service.WeatherMessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("weather/api/v1")
 public class WeatherMessageController {
 
-//    private WeatherMessageService weatherMessageService;
-//
-//    @Autowired
-//    public WeatherMessageController(WeatherMessageService weatherMessageService) {
-//        this.weatherMessageService = weatherMessageService;
-//    }
+    @Autowired
+    private WeatherMessageService weatherMessageService;
 
     @GetMapping("/hello")
     @ResponseStatus(HttpStatus.OK)
@@ -31,19 +25,16 @@ public class WeatherMessageController {
 
     @PostMapping("/sms")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<ResponseDescription> sendWeatherTextMessage(
-            @RequestBody RequestDescription requestDescription
+    public ResponseEntity<WeatherMessageResponse> sendWeatherTextMessage(
+            @RequestBody WeatherMessageRequest weatherMessageRequest
     ) {
-        log.info("SMS Message Request Received: {}", requestDescription);
-//        ResponseDescription description = weatherMessageService.getSendWeatherMessageSMS(
-//                requestDescription.getWeatherCity(),
-//                requestDescription.getWeatherCountryCode(),
-//                requestDescription.getContact()
-//        );
-        ResponseDescription description = ResponseDescription.builder()
-                .message("Hello World")
-                .build();
-        return ResponseEntity.ok(description);
+        log.info("SMS Message Request Received: {}", weatherMessageRequest);
+        WeatherMessageResponse response = weatherMessageService.getSendWeatherMessageSMS(
+                weatherMessageRequest.getWeatherCity(),
+                weatherMessageRequest.getWeatherCountryCode(),
+                weatherMessageRequest.getContact()
+        );
+        return ResponseEntity.ok(response);
     }
 
 }

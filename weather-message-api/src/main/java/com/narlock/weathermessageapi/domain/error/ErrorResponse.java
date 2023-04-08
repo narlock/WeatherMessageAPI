@@ -10,6 +10,6 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ErrorResponse {
-    private String message;
+    private String errorMessage;
     private int status;
 }
