@@ -10,4 +10,4 @@ twilio:
 
 openweather:
   url: https://api.openweathermap.org/data/2.5/weather
-  apiKey: ${openweather.apiKey}
+  apiKey: ${openweather.apikey}

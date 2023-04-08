@@ -1,5 +1,6 @@
 package com.narlock.weathermessageapi.service;
 
+import com.narlock.weathermessageapi.client.OpenWeatherClient;
 import com.narlock.weathermessageapi.client.TwilioClient;
 import com.narlock.weathermessageapi.domain.WeatherMessageResponse;
 import com.narlock.weathermessageapi.domain.WeatherInformation;
@@ -12,6 +13,9 @@ import org.springframework.stereotype.Service;
 public class WeatherMessageService {
 
     @Autowired
+    private OpenWeatherClient openWeatherClient;
+
+    @Autowired
     private TwilioClient twilioClient;
 
     public WeatherMessageResponse getSendWeatherMessageSMS(String city,
@@ -19,10 +23,10 @@ public class WeatherMessageService {
                                                            String phone
     ) {
         // Get Weather Information from Open Weather API
-        // openWeatherWebClient.getWeatherData(city, countryCode);
+        WeatherInformation weatherInformation = openWeatherClient.getWeatherInformation(city, countryCode);
 
         // Construct Message To Send
-        String messageBody = "Hello World";
+        String messageBody = constructWeatherMessageFromInformation(weatherInformation);
 
         // Send sms to each phone number of Weather Message
         // String twilioStatus = twilioClient.sendSms(phone, messageBody);
@@ -31,10 +35,7 @@ public class WeatherMessageService {
         // Return Response Description
         log.info("Constructing WeatherMessageResponse");
         return WeatherMessageResponse.builder()
-                .weatherInformation(
-                        WeatherInformation.builder()
-                                .build()
-                )
+                .weatherInformation(weatherInformation)
                 .status(twilioStatus.toUpperCase())
                 .message(messageBody)
                 .build();
@@ -45,10 +46,10 @@ public class WeatherMessageService {
                                                            String phone
     ) {
         // Get Weather Information from Open Weather API
-        // openWeatherWebClient.getWeatherData(city, countryCode);
+        WeatherInformation weatherInformation = openWeatherClient.getWeatherInformation(city, countryCode);
 
         // Construct Message To Send
-        String messageBody = "Hello World";
+        String messageBody = constructWeatherMessageFromInformation(weatherInformation);
 
         // Send sms to each phone number of Weather Message
         // String twilioStatus = twilioClient.sendVoice(phone, messageBody);
@@ -57,13 +58,21 @@ public class WeatherMessageService {
         // Return Response Description
         log.info("Constructing WeatherMessageResponse");
         return WeatherMessageResponse.builder()
-                .weatherInformation(
-                        WeatherInformation.builder()
-                                .build()
-                )
+                .weatherInformation(weatherInformation)
                 .status(twilioStatus.toUpperCase())
                 .message(messageBody)
                 .build();
     }
 
+    public String constructWeatherMessageFromInformation(WeatherInformation weatherInformation) {
+        return "Hello there, currently it's " +
+                weatherInformation.getDescription().toLowerCase() +
+                " with a temperature of " +
+                weatherInformation.getTemp() +
+                " degrees in " +
+                weatherInformation.getCity() +
+                ", " +
+                weatherInformation.getCountryCode() +
+                "!";
+    }
 }

@@ -17,12 +17,6 @@ public class WeatherMessageController {
     @Autowired
     private WeatherMessageService weatherMessageService;
 
-    @GetMapping("/hello")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> sayHello() {
-        return ResponseEntity.ok("Hello World, apiKey");
-    }
-
     @PostMapping("/sms")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<WeatherMessageResponse> sendWeatherTextMessage(
@@ -38,6 +32,17 @@ public class WeatherMessageController {
     }
 
     @PostMapping("/voice")
-    @R
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<WeatherMessageResponse> sendWeatherVoiceMessage(
+            @RequestBody WeatherMessageRequest weatherMessageRequest
+    ) {
+        log.info("Voice Message Request Received: {}", weatherMessageRequest);
+        WeatherMessageResponse response = weatherMessageService.getSendWeatherMessageVoice(
+                weatherMessageRequest.getWeatherCity(),
+                weatherMessageRequest.getWeatherCountryCode(),
+                weatherMessageRequest.getContact()
+        );
+        return ResponseEntity.ok(response);
+    }
 
 }
