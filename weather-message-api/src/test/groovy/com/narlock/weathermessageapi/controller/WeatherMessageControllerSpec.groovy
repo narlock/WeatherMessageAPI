@@ -26,4 +26,5 @@ class WeatherMessageControllerSpec extends Specification {
         response.andExpect(MockMvcResultMatchers.status().isOk())
         response.andExpect(MockMvcResultMatchers.content().string("Hello World"))
     }
+
 }

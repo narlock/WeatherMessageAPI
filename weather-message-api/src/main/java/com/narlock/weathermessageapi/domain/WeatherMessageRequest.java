@@ -1,16 +1,20 @@
 package com.narlock.weathermessageapi.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Builder
 public class WeatherMessageRequest {
+
+    @NonNull
     private String weatherCity;
+
+    @NonNull
     private String weatherCountryCode;
+
+    @NonNull
     private String contact;
+
+    @NonNull
+    private String unit;
 }

@@ -13,5 +13,6 @@ public class WeatherInformation {
     private String city;
     private String countryCode;
     private Integer temp;
+    private String unit;
     private String description;
 }

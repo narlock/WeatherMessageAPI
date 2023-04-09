@@ -26,7 +26,8 @@ public class WeatherMessageController {
         WeatherMessageResponse response = weatherMessageService.getSendWeatherMessageSMS(
                 weatherMessageRequest.getWeatherCity(),
                 weatherMessageRequest.getWeatherCountryCode(),
-                weatherMessageRequest.getContact()
+                weatherMessageRequest.getContact(),
+                weatherMessageRequest.getUnit()
         );
         return ResponseEntity.ok(response);
     }
@@ -40,7 +41,8 @@ public class WeatherMessageController {
         WeatherMessageResponse response = weatherMessageService.getSendWeatherMessageVoice(
                 weatherMessageRequest.getWeatherCity(),
                 weatherMessageRequest.getWeatherCountryCode(),
-                weatherMessageRequest.getContact()
+                weatherMessageRequest.getContact(),
+                weatherMessageRequest.getUnit()
         );
         return ResponseEntity.ok(response);
     }
