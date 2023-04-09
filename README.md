@@ -26,7 +26,8 @@ POST /weather/v1/sms
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": "1112223333"
+    "contact": "1112223333",
+    "unit": "F"
 }
 ```
 
@@ -39,11 +40,12 @@ Content-Type: application/json
     "weatherInformation": {
         "city": "New York",
         "countryCode": "US",
-        "temp": 20,
-        "description": "Cloudy",
+        "temp": 42,
+        "unit": "F",
+        "description": "Clear"
     },
     "status": "QUEUED",
-    "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
+    "message": "Hello there, currently it's clear with a temperature of 42 degrees F in New York, US!"
 }
 ```
 
@@ -57,7 +59,8 @@ POST /weather/v1/voice
 {
     "weatherCity": "New York",
     "weatherCountryCode": "US",
-    "contact": "1112223333"
+    "contact": "1112223333",
+    "unit": "F"
 }
 ```
 
@@ -70,11 +73,12 @@ Content-Type: application/json
     "weatherInformation": {
         "city": "New York",
         "countryCode": "US",
-        "temp": 20,
-        "description": "Cloudy",
+        "temp": 42,
+        "unit": "F",
+        "description": "Clear"
     },
     "status": "QUEUED",
-    "message": "Hello there, currently it's cloudy with a temperature of 20 degrees in New York!"
+    "message": "Hello there, currently it's clear with a temperature of 42 degrees F in New York, US!"
 }
 ```
 
