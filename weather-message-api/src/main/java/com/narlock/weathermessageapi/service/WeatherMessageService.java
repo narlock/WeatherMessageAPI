@@ -88,7 +88,9 @@ public class WeatherMessageService {
                 weatherInformation.getDescription().toLowerCase() +
                 " with a temperature of " +
                 weatherInformation.getTemp() +
-                " degrees in " +
+                " degrees " +
+                weatherInformation.getUnit() +
+                " in " +
                 weatherInformation.getCity() +
                 ", " +
                 weatherInformation.getCountryCode() +
