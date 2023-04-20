@@ -16,7 +16,7 @@ This project aims to build a Spring-based RESTful API that delivers weather info
 
 ## API Specification
 
-### `POST weather/v1/sms`
+### POST `weather/v1/sms`
 Sends a message to an array of phone numbers with the current weather information for a specific location.
 
 **Request**
@@ -49,7 +49,7 @@ Content-Type: application/json
 }
 ```
 
-### `POST weather/v1/voice`
+### POST `weather/v1/voice`
 Makes a voice call to an array of phone numbers and delivers the current weather information for a specific location.
 
 **Request**
@@ -90,3 +90,7 @@ Content-Type: application/json
 - Standard Spring Boot Layout (Controller, Service, Model packages).
 - Testing utilizing [Spock framework](https://spockframework.org/).
 - Properties hidden in `application.yaml` are stored in a secrets file.
+
+## Future Developments
+- Complete Spock Unit Testing
+- Implement GraphQL Integration
