@@ -4,18 +4,22 @@ import com.narlock.weathermessageapi.client.OpenWeatherClient;
 import com.narlock.weathermessageapi.client.TwilioClient;
 import com.narlock.weathermessageapi.domain.WeatherMessageResponse;
 import com.narlock.weathermessageapi.domain.WeatherInformation;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor
 public class WeatherMessageService {
 
-    protected OpenWeatherClient openWeatherClient;
+    private final OpenWeatherClient openWeatherClient;
 
-    protected TwilioClient twilioClient;
+    private final TwilioClient twilioClient;
+
+    public WeatherMessageService(OpenWeatherClient openWeatherClient, TwilioClient twilioClient) {
+        this.openWeatherClient = openWeatherClient;
+        this.twilioClient = twilioClient;
+    }
 
     public WeatherMessageResponse getSendWeatherMessageSMS(String city,
                                                            String countryCode,
