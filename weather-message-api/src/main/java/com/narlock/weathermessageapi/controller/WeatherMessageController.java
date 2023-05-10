@@ -4,7 +4,6 @@ import com.narlock.weathermessageapi.domain.WeatherMessageRequest;
 import com.narlock.weathermessageapi.domain.WeatherMessageResponse;
 import com.narlock.weathermessageapi.service.WeatherMessageService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +13,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("weather/api/v1")
 public class WeatherMessageController {
 
-    @Autowired
-    private WeatherMessageService weatherMessageService;
+    private final WeatherMessageService weatherMessageService;
+
+    public WeatherMessageController(WeatherMessageService weatherMessageService) {
+        this.weatherMessageService = weatherMessageService;
+    }
 
     @PostMapping("/sms")
     @ResponseStatus(HttpStatus.OK)
