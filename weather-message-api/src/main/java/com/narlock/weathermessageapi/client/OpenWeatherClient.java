@@ -16,10 +16,14 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 public class OpenWeatherClient {
 
     @Autowired
-    private WebClient webClient;
+    private final WebClient webClient;
 
     @Value("${openweather.apiKey}")
     private String apiKey;
+
+    public OpenWeatherClient(WebClient webClient) {
+        this.webClient = webClient;
+    }
 
     public WeatherInformation getWeatherInformation(String city, String countryCode) {
         // Make API Call
