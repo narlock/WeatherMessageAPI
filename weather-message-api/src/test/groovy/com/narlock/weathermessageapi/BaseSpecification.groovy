@@ -20,15 +20,17 @@ class BaseSpecification extends Specification {
         return WeatherMessageResponse.builder()
                 .message("Test Message")
                 .status("QUEUED")
-                .weatherInformation(
-                        WeatherInformation.builder()
-                                .city("New York")
-                                .countryCode("US")
-                                .temp(42)
-                                .unit("F")
-                                .description("Clear")
-                                .build()
-                )
+                .weatherInformation(validWeatherInformation())
+                .build();
+    }
+
+    WeatherInformation validWeatherInformation() {
+        return WeatherInformation.builder()
+                .city("New York")
+                .countryCode("US")
+                .temp(42)
+                .unit("F")
+                .description("Clear")
                 .build();
     }
 }

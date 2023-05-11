@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
 public class WeatherInformation {

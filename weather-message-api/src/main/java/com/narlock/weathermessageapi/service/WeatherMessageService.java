@@ -5,7 +5,6 @@ import com.narlock.weathermessageapi.client.TwilioClient;
 import com.narlock.weathermessageapi.domain.WeatherMessageResponse;
 import com.narlock.weathermessageapi.domain.WeatherInformation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -34,8 +33,7 @@ public class WeatherMessageService {
         String messageBody = constructWeatherMessageFromInformation(weatherInformation);
 
         // Send sms to each phone number of Weather Message
-//         String twilioStatus = twilioClient.sendSms(phone, messageBody);
-        String twilioStatus = "QUEUED"; // Debug message for less API calls
+        String twilioStatus = twilioClient.sendSms(phone, messageBody);
 
         // Return Response Description
         log.info("Constructing WeatherMessageResponse");
@@ -59,8 +57,7 @@ public class WeatherMessageService {
         String messageBody = constructWeatherMessageFromInformation(weatherInformation);
 
         // Send sms to each phone number of Weather Message
-        // String twilioStatus = twilioClient.sendVoice(phone, messageBody);
-        String twilioStatus = "QUEUED"; // Debug message for less API calls
+        String twilioStatus = twilioClient.sendVoice(phone, messageBody);
 
         // Return Response Description
         log.info("Constructing WeatherMessageResponse");
