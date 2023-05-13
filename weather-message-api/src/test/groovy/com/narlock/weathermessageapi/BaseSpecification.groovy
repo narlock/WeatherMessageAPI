@@ -39,6 +39,10 @@ class BaseSpecification extends Specification {
         return '{"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":293.48,"feels_like":293.24,"temp_min":289.91,"temp_max":295.34,"pressure":1016,"humidity":64},"visibility":10000,"wind":{"speed":3.09,"deg":250},"clouds":{"all":0},"dt":1683976067,"sys":{"type":2,"id":2008101,"country":"US","sunrise":1683970873,"sunset":1684022618},"timezone":-14400,"id":5128581,"name":"New York","cod":200}';
     }
 
+    String openWeatherResponseUnknownProperties() {
+        return '{"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":293.48,"feels_like":293.24,"temp_min":289.91,"temp_max":295.34,"pressure":1016,"humidity":64},"visibility":10000,"wind":{"speed":3.09,"deg":250},"clouds":{"all":0},"dt":1683976067,"sys":{"type":2,"id":2008101,"country":"US","sunrise":1683970873,"sunset":1684022618},"timezone":-14400,"id":5128581,"name":"New York","cod":200,"unknown":"hello"}';
+    }
+
     Weather validWeather() {
         Weather weather = new Weather()
 
