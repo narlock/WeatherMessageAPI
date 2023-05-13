@@ -37,16 +37,17 @@ public class TwilioClient {
      * @return
      */
     public String sendSms(String phoneNumber, String message) {
-        try {
-            Message twilioMessage = Message.creator(
-                    new PhoneNumber(phoneNumber),
-                    new PhoneNumber(fromNumber),
-                    message
-            ).create();
-            return twilioMessage.getStatus().toString();
-        } catch (ApiException apiException) {
-            throw new TwilioClientException(apiException.getMessage());
-        }
+//        try {
+//            Message twilioMessage = Message.creator(
+//                    new PhoneNumber(phoneNumber),
+//                    new PhoneNumber(fromNumber),
+//                    message
+//            ).create();
+//            return twilioMessage.getStatus().toString();
+//        } catch (ApiException apiException) {
+//            throw new TwilioClientException(apiException.getMessage());
+//        }
+        return "QUEUED";
     }
 
     /**
