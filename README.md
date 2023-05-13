@@ -82,6 +82,11 @@ Content-Type: application/json
 }
 ```
 
+## Test Coverage
+<p align="center">
+  <img src="./README%20Assets/TestCoverage.png" width="600px"/>
+</p>
+
 ## Developer Environment Dependencies
 - [OpenWeather API](https://openweathermap.org/api) - Weather data API to retrieve weather information.
 - [Twilio](https://www.twilio.com/docs/usage/api) - A cloud communications platform for sending SMS and making phone calls.
