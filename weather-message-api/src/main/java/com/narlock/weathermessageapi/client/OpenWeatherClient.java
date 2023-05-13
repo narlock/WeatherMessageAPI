@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.narlock.weathermessageapi.client.model.Weather;
+import com.narlock.weathermessageapi.client.model.WeatherMapper;
 import com.narlock.weathermessageapi.domain.WeatherInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,24 +43,7 @@ public class OpenWeatherClient {
             throw e;
         }
 
-        Weather weather = null;
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            weather = objectMapper.readValue(apiResponse, Weather.class);
-        } catch (JsonMappingException e) {
-            throw new RuntimeException(e);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-
-
-        // Construct WeatherInformation Object
-        return WeatherInformation.builder()
-                .city(weather.getName())
-                .countryCode(weather.getSys().getCountry())
-                .temp((int) Math.floor(weather.getMain().getTemp()))
-                .description(weather.getWeather()[0].getMain())
-                .build();
+        Weather weather = WeatherMapper.mapWeatherFromJsonString(apiResponse);
+        return WeatherMapper.constructWeatherInformationFromWeather(weather);
     }
 }
