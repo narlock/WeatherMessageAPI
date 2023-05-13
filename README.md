@@ -97,5 +97,4 @@ Content-Type: application/json
 - Properties hidden in `application.yaml` are stored in a secrets file.
 
 ## Future Developments
-- Complete Spock Unit Testing
 - Implement GraphQL Integration
