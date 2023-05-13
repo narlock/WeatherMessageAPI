@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 @Slf4j
 @ControllerAdvice
@@ -26,8 +27,8 @@ public class GlobalExceptionController {
      * @param e
      * @return
      */
-    @ExceptionHandler(TwilioClientException.class)
-    public ResponseEntity<ErrorResponse> handleTwilioClientException(TwilioClientException e) {
+    @ExceptionHandler({TwilioClientException.class, WebClientResponseException.class})
+    public ResponseEntity<ErrorResponse> handleClientException(Exception e) {
         log.error("Twilio Client Error occurred {}", e);
         return createErrorResponse(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
