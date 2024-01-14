@@ -4,7 +4,7 @@
 
 This project aims to build a Spring-based RESTful API that delivers weather information through text SMS messaging and phone calls.
 
-![Spring Boot](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring+boot&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-F2F4F9?style=for-the-badge&logo=spring-boot)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Apache Groovy](https://img.shields.io/badge/Groovy-4298B8.svg?style=for-the-badge&logo=Apache+Groovy&logoColor=white)
 
