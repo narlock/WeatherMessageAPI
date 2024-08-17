@@ -95,6 +95,3 @@ Content-Type: application/json
 - Standard Spring Boot Layout (Controller, Service, Model packages).
 - Testing utilizing [Spock framework](https://spockframework.org/).
 - Properties hidden in `application.yaml` are stored in a secrets file.
-
-## Future Developments
-- Implement GraphQL Integration
